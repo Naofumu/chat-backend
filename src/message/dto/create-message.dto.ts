@@ -4,8 +4,4 @@ export class CreateMessageDto {
     @IsNotEmpty()
     content: string
 
-    user: {
-        id: number;
-        username: string
-    }
 }

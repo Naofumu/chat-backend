@@ -16,7 +16,7 @@ export class MessageService {
   async create(createMessageDto: CreateMessageDto, user: User) {
     const message = this.messageRepository.create({
       ...createMessageDto,
-      user: user 
+      user: user
     });
     return await this.messageRepository.save(message)
   }
@@ -24,7 +24,8 @@ export class MessageService {
   async findAll(username: string) {
     return await this.messageRepository.find({
       where: { user: { username } },
-      order: { createdAt: 'ASC'}
+      order: { createdAt: 'ASC'},
+      relations: ['user']
     })
   }
 }

@@ -10,9 +10,9 @@ export class Message {
     content: string 
 
     @ManyToOne(() => User, (user) => user.messages)
-    @JoinColumn()
     user: User
 
     @CreateDateColumn()
     createdAt: Date
+
 }
